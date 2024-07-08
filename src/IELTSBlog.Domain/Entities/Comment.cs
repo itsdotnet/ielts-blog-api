@@ -1,6 +1,8 @@
+using IELTSBlog.Domain.Commons;
+
 namespace IELTSBlog.Domain.Entities;
 
-public class Comment
+public class Comment : Auditable
 {
     public string Content { get; set; }                 
     
