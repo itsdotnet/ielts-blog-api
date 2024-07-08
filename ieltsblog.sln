@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IELTSBlog.Api", "src\IELTSBlog.Api\IELTSBlog.Api.csproj", "{5701E7E1-4710-45ED-9997-B447EE9DCA27}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IELTSBlog.Domain", "src\IELTSBlog.Domain\IELTSBlog.Domain.csproj", "{5607E4AA-32BE-4967-B5D9-BCA6BCA1E66B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IELTSBlog.Repository", "src\IELTSBlog.Repository\IELTSBlog.Repository.csproj", "{60430825-5ED7-4B10-8A9A-AF0E44A8CE81}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5701E7E1-4710-45ED-9997-B447EE9DCA27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5701E7E1-4710-45ED-9997-B447EE9DCA27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5701E7E1-4710-45ED-9997-B447EE9DCA27}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5701E7E1-4710-45ED-9997-B447EE9DCA27}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5607E4AA-32BE-4967-B5D9-BCA6BCA1E66B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5607E4AA-32BE-4967-B5D9-BCA6BCA1E66B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5607E4AA-32BE-4967-B5D9-BCA6BCA1E66B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5607E4AA-32BE-4967-B5D9-BCA6BCA1E66B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60430825-5ED7-4B10-8A9A-AF0E44A8CE81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60430825-5ED7-4B10-8A9A-AF0E44A8CE81}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60430825-5ED7-4B10-8A9A-AF0E44A8CE81}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60430825-5ED7-4B10-8A9A-AF0E44A8CE81}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
