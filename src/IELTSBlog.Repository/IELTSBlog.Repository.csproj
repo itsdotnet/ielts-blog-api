@@ -6,4 +6,8 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\IELTSBlog.Domain\IELTSBlog.Domain.csproj" />
+    </ItemGroup>
+
 </Project>
