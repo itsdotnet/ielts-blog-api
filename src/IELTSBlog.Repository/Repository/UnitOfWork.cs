@@ -11,23 +11,25 @@ public class UnitOfWork : IUnitOfWork
     public UnitOfWork(AppDbContext dbContext)
     {
         _dbContext = dbContext;
-        
+
         UserRepository = new Repository<User>(dbContext);
         ArticleRepository = new Repository<Article>(dbContext);
-        CategoryRepository = new Repository<Category>(dbContext);   
+        CategoryRepository = new Repository<Category>(dbContext);
         CommentRepository = new Repository<Comment>(dbContext);
+        AttachmentRepository = new Repository<Attachment>(dbContext);
     }
-    
+
     public IRepository<User> UserRepository { get; }
     public IRepository<Article> ArticleRepository { get; }
     public IRepository<Category> CategoryRepository { get; }
     public IRepository<Comment> CommentRepository { get; }
+    public IRepository<Attachment> AttachmentRepository { get; }
 
     public void Dispose()
     {
         GC.SuppressFinalize(true);
     }
-    
+
     public async Task<bool> SaveAsync()
     {
         var result = await _dbContext.SaveChangesAsync();

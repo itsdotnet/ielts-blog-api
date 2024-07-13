@@ -1,6 +1,7 @@
 using AutoMapper;
 using IELTSBlog.Domain.Entities;
 using IELTSBlog.Service.DTOs.Articles;
+using IELTSBlog.Service.DTOs.Attachments;
 using IELTSBlog.Service.DTOs.Categories;
 using IELTSBlog.Service.DTOs.Comments;
 using IELTSBlog.Service.DTOs.Users;
@@ -26,5 +27,7 @@ public class MappingProfile : Profile
         CreateMap<Comment,CommentCreationDto>().ReverseMap();
         CreateMap<Comment, CommentUpdateDto>().ReverseMap();
         CreateMap<CommentResultDto, Comment>().ReverseMap();
+
+        CreateMap<Attachment, AttachmentResultDto>().ReverseMap();
     }
 }

@@ -8,5 +8,6 @@ public interface IUnitOfWork : IDisposable
     IRepository<Article> ArticleRepository { get; }
     IRepository<Category> CategoryRepository { get; }
     IRepository<Comment> CommentRepository { get; }
+    IRepository<Attachment> AttachmentRepository { get; }
     Task<bool> SaveAsync();
 }

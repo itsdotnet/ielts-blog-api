@@ -12,4 +12,5 @@ public class AppDbContext : DbContext
     public DbSet<Article> Videos { get; set; }
     public DbSet<Category> Images { get; set; }
     public DbSet<Comment> Courses { get; set; }
+    public DbSet<Attachment> Attachments { get; set; }
 }

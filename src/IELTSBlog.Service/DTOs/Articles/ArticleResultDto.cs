@@ -1,3 +1,4 @@
+using IELTSBlog.Service.DTOs.Attachments;
 using IELTSBlog.Service.DTOs.Categories;
 using IELTSBlog.Service.DTOs.Users;
 
@@ -10,4 +11,5 @@ public class ArticleResultDto
     public string Content { get; set; }
     public CategoryResultDto Category { get; set; }
     public UserResultDto User { get; set; }
+    public AttachmentResultDto Attachment { get; set; }
 }
