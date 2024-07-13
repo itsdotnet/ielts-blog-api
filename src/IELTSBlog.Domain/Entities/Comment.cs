@@ -13,4 +13,5 @@ public class Comment : Auditable
     public Article Article { get; set; }
     
     public long? ParentId { get; set; }
+    public Comment Parent { get; set; } 
 }
