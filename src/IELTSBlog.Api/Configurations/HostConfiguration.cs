@@ -1,5 +1,7 @@
 ﻿namespace IELTSBlog.Api.Configurations;
 
+using IELTSBlog.Repository.IRepositories;
+using IELTSBlog.Repository.Repository;
 using IELTSBlog.Service;
 using IELTSBlog.Service.Interfaces;
 using IELTSBlog.Service.Services;
@@ -20,14 +22,20 @@ public static class HostConfiguration
             .AddScoped<ICommentService, CommentService>()
             .AddScoped<IIdentityService, IdentityService>()
             .AddScoped<ITokenService, TokenService>()
-            .AddScoped<IUserService>();
+            .AddScoped<IUserService, UserService>();
+
+        services.AddScoped<IUnitOfWork, UnitOfWork>();
+        services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+        services.AddMemoryCache();
+        services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+
 
         return services;
     }
 
     public static IServiceCollection AddJwt(this IServiceCollection services, IConfiguration configuration)
     {
-        var key = Encoding.UTF8.GetBytes(configuration["Secret"] ?? throw new Exception("Key isn't configured."));
+        var key = Encoding.UTF8.GetBytes(configuration["JWT:Secret"] ?? throw new Exception("Key isn't configured."));
 
         services.AddAuthentication(options =>
         {

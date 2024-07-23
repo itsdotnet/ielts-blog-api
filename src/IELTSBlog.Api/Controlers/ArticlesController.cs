@@ -2,12 +2,14 @@
 using IELTSBlog.Domain.Configrations;
 using IELTSBlog.Service.DTOs.Articles;
 using IELTSBlog.Service.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace IELTSBlog.Api.Controlers;
 
 [ApiController]
 [Route("api/[controller]/[action]")]
+[Authorize]
 public class ArticlesController(IArticleService articleService) : ControllerBase
 {
     [HttpDelete]
@@ -29,6 +31,7 @@ public class ArticlesController(IArticleService articleService) : ControllerBase
     }
 
     [HttpGet]
+    [AllowAnonymous]
     public async ValueTask<IActionResult> Get(long id)
     {
         var result = await articleService.GetByIdAsync(id);
@@ -48,6 +51,7 @@ public class ArticlesController(IArticleService articleService) : ControllerBase
     }
 
     [HttpGet]
+    [AllowAnonymous]
     public async ValueTask<IActionResult> GetAll([FromQuery] PaginationParams paginationParams)
     {
         var result = await articleService.GetAllAsync(paginationParams);

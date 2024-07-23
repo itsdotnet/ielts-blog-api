@@ -2,11 +2,13 @@
 using IELTSBlog.Domain.Configrations;
 using IELTSBlog.Service.DTOs.Categories;
 using IELTSBlog.Service.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace IELTSBlog.Api.Controlers;
 
 [ApiController]
+[Authorize]
 [Route("api/[controller]/[action]")]
 public class CategoriesController(ICategoryService categoryService) : ControllerBase
 {
@@ -30,6 +32,7 @@ public class CategoriesController(ICategoryService categoryService) : Controller
     }
 
     [HttpGet]
+    [AllowAnonymous]
     public async ValueTask<IActionResult> Get(long id)
     {
         var result = await categoryService.GetByIdAsync(id);
@@ -49,6 +52,7 @@ public class CategoriesController(ICategoryService categoryService) : Controller
     }
 
     [HttpGet]
+    [AllowAnonymous]
     public async ValueTask<IActionResult> GetAll([FromQuery] PaginationParams @params)
     {
         var result = await categoryService.GetAllAsync(@params);

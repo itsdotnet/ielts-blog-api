@@ -1,5 +1,4 @@
 ﻿using IELTSBlog.Api.Models;
-using IELTSBlog.Domain.Configrations;
 using IELTSBlog.Service.DTOs.Users;
 using IELTSBlog.Service.Interfaces;
 using Microsoft.AspNetCore.Mvc;

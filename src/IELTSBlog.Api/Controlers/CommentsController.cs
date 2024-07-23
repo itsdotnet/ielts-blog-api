@@ -2,12 +2,14 @@
 using IELTSBlog.Domain.Configrations;
 using IELTSBlog.Service.DTOs.Comments;
 using IELTSBlog.Service.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace IELTSBlog.Api.Controlers;
 
 [ApiController]
 [Route("api/[controller]/[action]")]
+[Authorize]
 public class CommentsController(ICommentService commentService) : Controller
 {
     [HttpPost]
@@ -30,6 +32,7 @@ public class CommentsController(ICommentService commentService) : Controller
     }
 
     [HttpGet]
+    [AllowAnonymous]
     public async ValueTask<IActionResult> Get(long id)
     {
         var result = await commentService.GetByIdAsync(id);
@@ -49,6 +52,7 @@ public class CommentsController(ICommentService commentService) : Controller
     }
 
     [HttpGet]
+    [AllowAnonymous]
     public async ValueTask<IActionResult> GetAll([FromQuery] PaginationParams pagination)
     {
         var result = await commentService.GetAllAsync(pagination);

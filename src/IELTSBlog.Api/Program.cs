@@ -16,6 +16,9 @@ builder.Services.AddServices();
 //JWT
 builder.Services.AddJwt(builder.Configuration);
 
+//AutoMapper
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
 builder.Services.ConfigureSwagger();
 
 //Lowercase route

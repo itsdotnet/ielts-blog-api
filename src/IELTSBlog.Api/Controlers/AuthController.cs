@@ -7,7 +7,6 @@ using Microsoft.AspNetCore.Mvc;
 namespace IELTSBlog.Api.Controlers;
 
 
-[Authorize]
 [ApiController]
 [Route("api/[controller]")]
 public class AuthController(IAuthService authService) : ControllerBase
@@ -32,7 +31,6 @@ public class AuthController(IAuthService authService) : ControllerBase
     }
 
     [HttpPost("register")]
-    [AllowAnonymous]
     public async Task<IActionResult> RegisterAsync(UserCreationDto registerDto)
     {
         await authService.RegisterAsync(registerDto);
@@ -47,7 +45,6 @@ public class AuthController(IAuthService authService) : ControllerBase
     }
 
     [HttpPost("register/verify")]
-    [AllowAnonymous]
     public async Task<IActionResult> VerifyRegisterAsync(VerifyModel model)
     {
         var serviceResult = await authService.VerifyRegisterAsync(model.Email, int.Parse(model.Code));
